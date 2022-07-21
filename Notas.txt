@@ -1,0 +1,92 @@
+Prueba automatizadas con Python
+
+Con este comando realizamos pruebas: python "nombre del modulo".py
+Para obtener mas informacion agregamos "-v" al final para ver, por ejemplo: python "nombre del modulo.py -v
+
+Comando para instalar pytest: pip install -U pytest
+Para pruebas unitarias con pytest ponemos: pytest "nombre del modulo".py
+
+Metodos assert:
+assertEqual(a, b)	a == b
+assertNotEqual(a, b)	a != b
+assertTrue(x)	bool(x) is True
+assertFalse(x)	bool(x) is False
+assertAlmostEqual(a, b)	round(a-b, 7) == 0
+assertNotAlmostEqual(a, b)	round(a-b, 7) != 0
+assertIs(a, b)	a is b
+assertIsNot(a, b)	a is not b
+assertIsNone(x)	x is None
+assertIsNotNone(x)	x is not None
+assertIn(a, b)	a in b
+assertNotIn(a, b)	a not in b
+assertIsInstance(a, b)	isinstance(a, b)
+assertNotIsInstance(a, b)	assertNotIsInstance(a, b)
+assertGreater(a, b)	a > b
+assertGreaterEqual(a, b)	a >= b
+assertLess(a, b)	a < b
+assertLessEqual(a, b)	a <= b
+assertRegex(s, r)	r.search(s)
+assertNotRegex(s, r)	not r.search(s)
+assertCountEqual(s, r)	len(s) == len(r)
+
+--------------------------------------------------------------------------------------------------------
+
+El uso de unittest es muy sencillo. Para cada grupo de pruebas tenemos que crear una clase que herede de unittest.TestCase, y añadir
+una serie de métodos que comiencen con test, que serán cada una de
+las pruebas que queremos ejecutar dentro de esa batería de pruebas.
+
+Para ejecutar las pruebas, basta llamar a la función main() del módulo,
+con lo que se ejecutarán todos los métodos cuyo nombre comience con
+test, en orden alfanumérico. Al ejecutar cada una de las pruebas el
+resultado puede ser:
+•     OK: La prueba ha pasado con éxito.
+•     FAIL: La prueba no ha pasado con éxito. Se lanza una excepción
+AssertionError para indicarlo.
+•     ERROR: Al ejecutar la prueba se lanzó una excepción distinta de
+AssertionError.'''
+
+•     assertAlmostEqual(first, second, places=7, msg=None):
+Comprueba que los objetos pasados como parámetros sean iguales
+hasta el séptimo decimal (o el número de decimales indicado por
+places).
+•     assertEqual(first, second, msg=None): Comprueba que los
+objetos pasados como parámetros sean iguales.
+•     assertFalse(expr, msg=None): Comprueba que la expresión sea
+falsa.
+•     assertNotAlmostEqual(first, second, places=7, msg=None):
+Comprueba que los objetos pasados como parámetros no sean
+iguales hasta el séptimo decimal (o hasta el número de decimales
+indicado por places).
+•     assertNotEqual(first, second, msg=None): Comprueba que los
+objetos pasados como parámetros no sean iguales.
+•     assertRaises(excClass, callableObj, *args, **kwargs):
+Comprueba que al llamar al objeto callableObj con los parámetros definidos por *args y **kwargs se lanza una excepción de tipo
+excClass.
+•     assertTrue(expr, msg=None): Comprueba que la expresión sea cierta.
+•     assert_(expr, msg=None): Comprueba que la expresión sea cierta.
+•     fail(msg=None): Falla inmediatamente.
+•     failIf(expr, msg=None): Falla si la expresión es cierta.
+•     failIfAlmostEqual(first, second, places=7, msg=None): Falla Pruebas
+
+si los objetos pasados como parámetros son iguales hasta el séptimo decimal (o hasta el número de decimales indicado por places).
+•     failIfEqual(first, second, msg=None): Falla si los objetos pasados como parámetros son iguales.
+•     failUnless(expr, msg=None): Falla a menos que la expresión sea cierta.
+•     failUnlessAlmostEqual(first, second, places=7, msg=None):
+Falla a menos que los objetos pasados como parámetros sean
+iguales hasta el séptimo decimal (o hasta el número de decimales
+indicado por places).
+•     failUnlessEqual(first, second, msg=None): Falla a menos que los objetos pasados como parámetros sean iguales.
+•     failUnlessRaises(excClass, callableObj, *args, **kwargs): Falla a menos que al llamar al objeto callableObj con los parámetros definidos por *args y **kwargs se lance una excepción de tipo excClass.
+
+Cobertura de codigo es una medida porcentual que nos indica que porcentaje de nuestro software ha sido testeado y sabremos que lineas de codigo se han ejecutado y cuales no
+Comando para instalar coverage: pip install coverage
+
+Asi realizamos la cobertura: coverage report "nombre del modulo".py
+Asi corremos el modulo para despues obtener el reporte: coverage run "nombre del modulo".py
+Si requerimos de mas detalles del reporte ponemos "-m": coverage report -m "nombre del modulo".py
+
+Para hacer el reporte con archivos con extension "html" ponemos: coverage html "nombre del modulo".py
+Para poder ver el reporte necesitamos levantar un servidor web y lo levantamos con el siguient comando: python -m http.server
+Ponemos en el navegador "localhost:8000", "localhost:'puerto'" o "direccion o puerto especifico"
+
+
